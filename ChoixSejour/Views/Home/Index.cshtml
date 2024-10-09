@@ -1,0 +1,23 @@
+﻿@model ChoixSejour.ViewModels.HomeViewModel
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+ 
+    <div>Je suis la vue index</div>
+    @Html.Partial("PartialExample", Model)
+
+    <div>Lien sans paramètre</div>
+    @Html.ActionLink("Afficher Lieux", "Index", "Home")
+
+    <div>Lien avec paramètres</div>
+    @Html.ActionLink("Modifier Lieu 3", "ModifierSejour", "Sejour", new { id = 3 }, null) 
+    @Html.DropDownList("sejourChoisi", new SelectList(Model.ListUtilisateurs,"Id", "Prenom"))
+</body>
+</html>
